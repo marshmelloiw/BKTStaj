@@ -1,0 +1,17 @@
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\bin\Debug\net8.0\KampusTek.Data.deps.json
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\bin\Debug\net8.0\KampusTek.Data.runtimeconfig.json
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\bin\Debug\net8.0\KampusTek.Data.dll
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\bin\Debug\net8.0\KampusTek.Data.pdb
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\bin\Debug\net8.0\KampusTek.Entities.dll
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\bin\Debug\net8.0\KampusTek.Entities.pdb
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\obj\Debug\net8.0\KampusTek.Data.csproj.AssemblyReference.cache
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\obj\Debug\net8.0\KampusTek.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\obj\Debug\net8.0\KampusTek.Data.AssemblyInfoInputs.cache
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\obj\Debug\net8.0\KampusTek.Data.AssemblyInfo.cs
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\obj\Debug\net8.0\KampusTek.Data.csproj.CoreCompileInputs.cache
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\obj\Debug\net8.0\KampusTe.9A0DC3D0.Up2Date
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\obj\Debug\net8.0\KampusTek.Data.dll
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\obj\Debug\net8.0\refint\KampusTek.Data.dll
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\obj\Debug\net8.0\KampusTek.Data.pdb
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\obj\Debug\net8.0\KampusTek.Data.genruntimeconfig.cache
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Data\obj\Debug\net8.0\ref\KampusTek.Data.dll

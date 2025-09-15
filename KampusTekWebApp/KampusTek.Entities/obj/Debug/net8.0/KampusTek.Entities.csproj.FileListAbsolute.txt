@@ -1,0 +1,11 @@
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Entities\bin\Debug\net8.0\KampusTek.Entities.deps.json
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Entities\bin\Debug\net8.0\KampusTek.Entities.dll
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Entities\bin\Debug\net8.0\KampusTek.Entities.pdb
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Entities\obj\Debug\net8.0\KampusTek.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Entities\obj\Debug\net8.0\KampusTek.Entities.AssemblyInfoInputs.cache
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Entities\obj\Debug\net8.0\KampusTek.Entities.AssemblyInfo.cs
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Entities\obj\Debug\net8.0\KampusTek.Entities.csproj.CoreCompileInputs.cache
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Entities\obj\Debug\net8.0\KampusTek.Entities.dll
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Entities\obj\Debug\net8.0\refint\KampusTek.Entities.dll
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Entities\obj\Debug\net8.0\KampusTek.Entities.pdb
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTek.Entities\obj\Debug\net8.0\ref\KampusTek.Entities.dll

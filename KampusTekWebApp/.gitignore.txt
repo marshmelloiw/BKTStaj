@@ -1,0 +1,18 @@
+# Build
+bin/
+obj/
+
+# User & IDE
+.vs/
+*.user
+*.suo
+
+# Log
+*.log
+
+# Output
+out/
+publish/
+
+# Config
+appsettings.Development.json
