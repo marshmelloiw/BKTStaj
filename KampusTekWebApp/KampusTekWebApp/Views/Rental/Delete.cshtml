@@ -1,0 +1,21 @@
+﻿@model KampusTek.Entities.Rental
+
+@{
+    ViewData["Title"] = "Kiralama Sil";
+}
+
+<h2>Kiralama Sil</h2>
+
+<div>
+    <h4>@Model.User?.FirstName @Model.User?.LastName kullanıcısının kiralamasını silmek istediğinize emin misiniz?</h4>
+    <p><b>Bisiklet:</b> @Model.Bicycle?.BicycleCode</p>
+    <p><b>Başlangıç:</b> @Model.StartStation?.Name</p>
+    <p><b>Bitiş:</b> @Model.EndStation?.Name</p>
+    <p><b>Başlangıç Zamanı:</b> @Model.StartTime</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Sil</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>

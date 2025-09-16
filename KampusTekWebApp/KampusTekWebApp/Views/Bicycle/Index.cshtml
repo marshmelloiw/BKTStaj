@@ -1,0 +1,39 @@
+﻿@model IEnumerable<KampusTek.Entities.Bicycle>
+
+@{
+    ViewData["Title"] = "Bisikletler";
+}
+
+<h2>Bisikletler</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Kod</th>
+            <th>Model</th>
+            <th>Renk</th>
+            <th>Durum</th>
+            <th>İstasyon</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bicycle in Model)
+        {
+            <tr>
+                <td>@bicycle.BicycleCode</td>
+                <td>@bicycle.Model</td>
+                <td>@bicycle.Color</td>
+                <td>@bicycle.Status</td>
+                <td>@bicycle.CurrentStation?.Name</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@bicycle.Id">Detay</a> |
+                    <a asp-action="Edit" asp-route-id="@bicycle.Id">Düzenle</a> |
+                    <a asp-action="Delete" asp-route-id="@bicycle.Id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Yeni Bisiklet Ekle</a>

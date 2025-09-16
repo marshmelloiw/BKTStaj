@@ -1,0 +1,17 @@
+﻿@model KampusTek.Entities.User
+
+@{
+    ViewData["Title"] = "Kullanıcı Detay";
+}
+
+<h2>Kullanıcı Detay</h2>
+
+<ul class="list-group">
+    <li class="list-group-item"><b>Ad:</b> @Model.FirstName</li>
+    <li class="list-group-item"><b>Soyad:</b> @Model.LastName</li>
+    <li class="list-group-item"><b>Email:</b> @Model.Email</li>
+    <li class="list-group-item"><b>Telefon:</b> @Model.CellNumber</li>
+    <li class="list-group-item"><b>Kullanıcı Tipi:</b> @Model.UserTypeId</li>
+</ul>
+
+<a asp-action="Index" class="btn btn-secondary">Geri</a>

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<KampusTek.Entities.Station>
+
+@{
+    ViewData["Title"] = "İstasyonlar";
+}
+
+<h2>İstasyonlar</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Konum</th>
+            <th>Kapasite</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var station in Model)
+        {
+            <tr>
+                <td>@station.Name</td>
+                <td>@station.Location</td>
+                <td>@station.Capacity</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@station.Id">Detay</a> |
+                    <a asp-action="Edit" asp-route-id="@station.Id">Düzenle</a> |
+                    <a asp-action="Delete" asp-route-id="@station.Id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Yeni İstasyon Ekle</a>

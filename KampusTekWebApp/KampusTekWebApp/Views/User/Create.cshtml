@@ -1,0 +1,43 @@
+﻿@model KampusTek.Entities.User
+
+@{
+    ViewData["Title"] = "Yeni Kullanıcı";
+}
+
+<h2>Yeni Kullanıcı Ekle</h2>
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label>Ad</label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Soyad</label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Telefon</label>
+        <input asp-for="CellNumber" class="form-control" />
+        <span asp-validation-for="CellNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Kullanıcı Tipi</label>
+        <select asp-for="UserTypeId" class="form-control"
+                asp-items="@(ViewBag.UserTypes)">
+            <option value="">-- Seçiniz --</option>
+        </select>
+        <span asp-validation-for="UserTypeId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+    <a asp-action="Index" class="btn btn-secondary">Geri</a>
+</form>

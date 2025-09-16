@@ -1,0 +1,17 @@
+﻿@model KampusTek.Entities.Bicycle
+
+@{
+    ViewData["Title"] = "Bisiklet Detayı";
+}
+
+<h2>Bisiklet Detayı</h2>
+
+<ul class="list-group">
+    <li class="list-group-item"><b>Kod:</b> @Model.BicycleCode</li>
+    <li class="list-group-item"><b>Model:</b> @Model.Model</li>
+    <li class="list-group-item"><b>Renk:</b> @Model.Color</li>
+    <li class="list-group-item"><b>Durum:</b> @Model.Status</li>
+    <li class="list-group-item"><b>İstasyon:</b> @Model.CurrentStation?.Name</li>
+</ul>
+
+<a asp-action="Index" class="btn btn-secondary">Geri</a>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - KampusTek</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">KampusTek 🚲</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="/Home/Index">Ana Sayfa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/User">Kullanıcılar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Bicycle">Bisikletler</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Station">İstasyonlar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Rental">Kiralamalar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+
+    <footer class="bg-light text-center py-3 mt-4">
+        <p>&copy; 2025 - KampusTek 🚲</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

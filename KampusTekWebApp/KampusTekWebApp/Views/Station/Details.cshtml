@@ -1,0 +1,15 @@
+﻿@model KampusTek.Entities.Station
+
+@{
+    ViewData["Title"] = "İstasyon Detayı";
+}
+
+<h2>İstasyon Detayı</h2>
+
+<ul class="list-group">
+    <li class="list-group-item"><b>Ad:</b> @Model.Name</li>
+    <li class="list-group-item"><b>Konum:</b> @Model.Location</li>
+    <li class="list-group-item"><b>Kapasite:</b> @Model.Capacity</li>
+</ul>
+
+<a asp-action="Index" class="btn btn-secondary">Geri</a>

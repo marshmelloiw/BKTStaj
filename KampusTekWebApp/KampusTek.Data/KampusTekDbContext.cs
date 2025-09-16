@@ -45,6 +45,11 @@ namespace KampusTek.Data
                 .HasOne(m => m.Bicycle)
                 .WithMany(b => b.Maintenances)
                 .HasForeignKey(m => m.BicycleId);
+
+            modelBuilder.Entity<UserType>().HasData(
+                new UserType { Id = 1, Name = "Öğrenci" },
+                new UserType { Id = 2, Name = "Personel" }
+            );
         }
     }
 }

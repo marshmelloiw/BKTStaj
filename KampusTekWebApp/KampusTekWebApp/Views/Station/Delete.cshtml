@@ -1,0 +1,19 @@
+﻿@model KampusTek.Entities.Station
+
+@{
+    ViewData["Title"] = "İstasyon Sil";
+}
+
+<h2>İstasyon Sil</h2>
+
+<div>
+    <h4>@Model.Name adlı istasyonu silmek istediğinize emin misiniz?</h4>
+    <p><b>Konum:</b> @Model.Location</p>
+    <p><b>Kapasite:</b> @Model.Capacity</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Sil</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>

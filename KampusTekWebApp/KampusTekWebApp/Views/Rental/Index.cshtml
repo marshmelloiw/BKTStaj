@@ -1,0 +1,41 @@
+﻿@model IEnumerable<KampusTek.Entities.Rental>
+
+@{
+    ViewData["Title"] = "Kiralama Listesi";
+}
+
+<h2>Kiralama Listesi</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Kullanıcı</th>
+            <th>Bisiklet</th>
+            <th>Başlangıç İstasyonu</th>
+            <th>Bitiş İstasyonu</th>
+            <th>Başlangıç Zamanı</th>
+            <th>Dönüş Zamanı</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var rental in Model)
+        {
+            <tr>
+                <td>@rental.User?.FirstName @rental.User?.LastName</td>
+                <td>@rental.Bicycle?.BicycleCode</td>
+                <td>@rental.StartStation?.Name</td>
+                <td>@rental.EndStation?.Name</td>
+                <td>@rental.StartTime</td>
+                <td>@rental.ReturnTime</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@rental.Id">Detay</a> |
+                    <a asp-action="Edit" asp-route-id="@rental.Id">Düzenle</a> |
+                    <a asp-action="Delete" asp-route-id="@rental.Id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Yeni Kiralama Ekle</a>

@@ -191,6 +191,18 @@ namespace KampusTek.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UserTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Öğrenci"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Personel"
+                        });
                 });
 
             modelBuilder.Entity("KampusTek.Entities.Bicycle", b =>

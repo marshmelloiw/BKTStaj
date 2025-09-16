@@ -1,0 +1,18 @@
+﻿@model KampusTek.Entities.Rental
+
+@{
+    ViewData["Title"] = "Kiralama Detayı";
+}
+
+<h2>Kiralama Detayı</h2>
+
+<ul class="list-group">
+    <li class="list-group-item"><b>Kullanıcı:</b> @Model.User?.FirstName @Model.User?.LastName</li>
+    <li class="list-group-item"><b>Bisiklet:</b> @Model.Bicycle?.BicycleCode</li>
+    <li class="list-group-item"><b>Başlangıç İstasyonu:</b> @Model.StartStation?.Name</li>
+    <li class="list-group-item"><b>Bitiş İstasyonu:</b> @Model.EndStation?.Name</li>
+    <li class="list-group-item"><b>Başlangıç Zamanı:</b> @Model.StartTime</li>
+    <li class="list-group-item"><b>Dönüş Zamanı:</b> @Model.ReturnTime</li>
+</ul>
+
+<a asp-action="Index" class="btn btn-secondary">Geri</a>
