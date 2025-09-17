@@ -11,10 +11,10 @@ builder.Services.AddDbContext<KampusTekDbContext>(options =>
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserTypeService, UserTypeService>();
 builder.Services.AddScoped<IStationService, StationService>();
 builder.Services.AddScoped<IBicycleService, BicycleService>();
 builder.Services.AddScoped<IRentalService, RentalService>();
-builder.Services.AddScoped<IUserTypeService, UserTypeService>();
 
 var app = builder.Build();
 

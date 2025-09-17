@@ -1,19 +1,19 @@
 ﻿@model IEnumerable<KampusTek.Entities.User>
 
 @{
-    ViewData["Title"] = "Kullanıcılar";
+    ViewData["Title"] = "Users";
 }
 
-<h2>Kullanıcılar</h2>
+<h2>Users</h2>
 
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Ad</th>
-            <th>Soyad</th>
+            <th>First Name</th>
+            <th>Last Name</th>
             <th>Email</th>
-            <th>Telefon</th>
-            <th>Kullanıcı Türü</th>
+            <th>Phone</th>
+            <th>User Type</th>
             <th></th>
         </tr>
     </thead>
@@ -27,13 +27,13 @@
                 <td>@user.CellNumber</td>
                 <td>@user.UserType?.Name</td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@user.Id" class="btn btn-info btn-sm">Detay</a>
-                    <a asp-action="Edit" asp-route-id="@user.Id" class="btn btn-warning btn-sm">Düzenle</a>
-                    <a asp-action="Delete" asp-route-id="@user.Id" class="btn btn-danger btn-sm">Sil</a>
+                    <a asp-action="Details" asp-route-id="@user.Id" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="Edit" asp-route-id="@user.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@user.Id" class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<a asp-action="Create" class="btn btn-primary">Yeni Kullanıcı Ekle</a>
+<a asp-action="Create" class="btn btn-primary">Create New User</a>

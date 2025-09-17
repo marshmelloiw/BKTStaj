@@ -41,7 +41,7 @@ namespace KampusTek.Business.Concrete
         public User GetById(int id)
         {
             return _context.Users
-                .Include(u => u.UserType) // UserType bilgisi de gelsin
+                .Include(u => u.UserType)
                 .FirstOrDefault(u => u.Id == id);
         }
 

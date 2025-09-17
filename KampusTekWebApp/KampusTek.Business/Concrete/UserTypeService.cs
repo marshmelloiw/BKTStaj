@@ -1,12 +1,9 @@
-﻿using KampusTek.Business.Abstract;
+using KampusTek.Business.Abstract;
 using KampusTek.Data;
 using KampusTek.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KampusTek.Business.Concrete
 {
@@ -19,36 +16,20 @@ namespace KampusTek.Business.Concrete
             _context = context;
         }
 
-        public IEnumerable<UserType> GetAll()
+        public List<UserType> GetAll()
         {
-            return _context.UserTypes.ToList();
+            var userTypes = _context.UserTypes.ToList();
+            Console.WriteLine($"UserTypeService.GetAll() - {userTypes.Count} user type bulundu");
+            foreach (var ut in userTypes)
+            {
+                Console.WriteLine($"  - ID: {ut.Id}, Name: {ut.Name}");
+            }
+            return userTypes;
         }
 
-        public UserType? GetById(int id)
+        public UserType GetById(int id)
         {
             return _context.UserTypes.Find(id);
-        }
-
-        public void Add(UserType userType)
-        {
-            _context.UserTypes.Add(userType);
-            _context.SaveChanges();
-        }
-
-        public void Update(UserType userType)
-        {
-            _context.UserTypes.Update(userType);
-            _context.SaveChanges();
-        }
-
-        public void Delete(int id)
-        {
-            var userType = _context.UserTypes.Find(id);
-            if (userType != null)
-            {
-                _context.UserTypes.Remove(userType);
-                _context.SaveChanges();
-            }
         }
     }
 }

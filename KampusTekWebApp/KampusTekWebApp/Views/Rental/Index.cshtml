@@ -1,20 +1,20 @@
 ﻿@model IEnumerable<KampusTek.Entities.Rental>
 
 @{
-    ViewData["Title"] = "Kiralama Listesi";
+    ViewData["Title"] = "Rentals";
 }
 
-<h2>Kiralama Listesi</h2>
+<h2>Rentals</h2>
 
 <table class="table">
     <thead>
         <tr>
-            <th>Kullanıcı</th>
-            <th>Bisiklet</th>
-            <th>Başlangıç İstasyonu</th>
-            <th>Bitiş İstasyonu</th>
-            <th>Başlangıç Zamanı</th>
-            <th>Dönüş Zamanı</th>
+            <th>User</th>
+            <th>Bicycle</th>
+            <th>Start Station</th>
+            <th>End Station</th>
+            <th>Start Time</th>
+            <th>Return Time</th>
             <th></th>
         </tr>
     </thead>
@@ -29,13 +29,13 @@
                 <td>@rental.StartTime</td>
                 <td>@rental.ReturnTime</td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@rental.Id">Detay</a> |
-                    <a asp-action="Edit" asp-route-id="@rental.Id">Düzenle</a> |
-                    <a asp-action="Delete" asp-route-id="@rental.Id">Sil</a>
+                    <a asp-action="Details" asp-route-id="@rental.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@rental.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@rental.Id">Delete</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<a asp-action="Create" class="btn btn-primary">Yeni Kiralama Ekle</a>
+<a asp-action="Create" class="btn btn-primary">Create New Rental</a>

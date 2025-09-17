@@ -1,19 +1,19 @@
 ﻿@model IEnumerable<KampusTek.Entities.Bicycle>
 
 @{
-    ViewData["Title"] = "Bisikletler";
+    ViewData["Title"] = "Bicycles";
 }
 
-<h2>Bisikletler</h2>
+<h2>Bicycles</h2>
 
 <table class="table">
     <thead>
         <tr>
-            <th>Kod</th>
+            <th>Code</th>
             <th>Model</th>
-            <th>Renk</th>
-            <th>Durum</th>
-            <th>İstasyon</th>
+            <th>Color</th>
+            <th>Status</th>
+            <th>Station</th>
             <th></th>
         </tr>
     </thead>
@@ -27,13 +27,13 @@
                 <td>@bicycle.Status</td>
                 <td>@bicycle.CurrentStation?.Name</td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@bicycle.Id">Detay</a> |
-                    <a asp-action="Edit" asp-route-id="@bicycle.Id">Düzenle</a> |
-                    <a asp-action="Delete" asp-route-id="@bicycle.Id">Sil</a>
+                    <a asp-action="Details" asp-route-id="@bicycle.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@bicycle.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@bicycle.Id">Delete</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<a asp-action="Create" class="btn btn-primary">Yeni Bisiklet Ekle</a>
+<a asp-action="Create" class="btn btn-primary">Create New Bicycle</a>

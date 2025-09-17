@@ -1,17 +1,17 @@
 ﻿@model KampusTek.Entities.User
 
 @{
-    ViewData["Title"] = "Kullanıcı Sil";
+    ViewData["Title"] = "Delete User";
 }
 
-<h2>Kullanıcı Sil</h2>
+<h2>Delete User</h2>
 
 <div>
-    <h4>@Model.FirstName @Model.LastName adlı kullanıcıyı silmek istediğinize emin misiniz?</h4>
+    <h4>Are you sure you want to delete user @Model.FirstName @Model.LastName?</h4>
 </div>
 
-<form asp-action="DeleteConfirmed" method="post">
+<form asp-action="Delete" method="post">
     <input type="hidden" asp-for="Id" />
-    <button type="submit" class="btn btn-danger">Sil</button>
-    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>

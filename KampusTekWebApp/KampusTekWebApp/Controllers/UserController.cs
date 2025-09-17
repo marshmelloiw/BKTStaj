@@ -1,19 +1,16 @@
 ﻿using KampusTek.Business.Abstract;
 using KampusTek.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace KampusTekWebApp.Controllers
 {
     public class UserController : Controller
     {
         private readonly IUserService _userService;
-        private readonly IUserTypeService _userTypeService;
 
-        public UserController(IUserService userService, IUserTypeService userTypeService)
+        public UserController(IUserService userService)
         {
             _userService = userService;
-            _userTypeService = userTypeService;
         }
 
         public IActionResult Index()
@@ -33,7 +30,6 @@ namespace KampusTekWebApp.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.UserTypes = new SelectList(_userTypeService.GetAll(), "Id", "Name");
             return View();
         }
 
@@ -47,8 +43,6 @@ namespace KampusTekWebApp.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            // Hata durumunda da dropdown dolu kalmalı
-            ViewBag.UserTypes = new SelectList(_userTypeService.GetAll(), "Id", "Name", user.UserTypeId);
             return View(user);
         }
 
@@ -58,7 +52,6 @@ namespace KampusTekWebApp.Controllers
             if (user == null)
                 return NotFound();
 
-            ViewBag.UserTypes = new SelectList(_userTypeService.GetAll(), "Id", "Name", user.UserTypeId);
             return View(user);
         }
 
@@ -72,7 +65,6 @@ namespace KampusTekWebApp.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewBag.UserTypes = new SelectList(_userTypeService.GetAll(), "Id", "Name", user.UserTypeId);
             return View(user);
         }
 
