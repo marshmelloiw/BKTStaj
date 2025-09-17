@@ -1,16 +1,23 @@
 using Microsoft.AspNetCore.Mvc;
 using KampusTek.Business.Abstract;
 using KampusTek.Entities;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace KampusTekWebApp.Controllers
 {
     public class RentalController : Controller
     {
         private readonly IRentalService _rentalService;
+        private readonly IUserService _userService;
+        private readonly IBicycleService _bicycleService;
+        private readonly IStationService _stationService;
 
-        public RentalController(IRentalService rentalService)
+        public RentalController(IRentalService rentalService, IUserService userService, IBicycleService bicycleService, IStationService stationService)
         {
             _rentalService = rentalService;
+            _userService = userService;
+            _bicycleService = bicycleService;
+            _stationService = stationService;
         }
 
         public IActionResult Index()
@@ -30,6 +37,14 @@ namespace KampusTekWebApp.Controllers
 
         public IActionResult Create()
         {
+            var users = _userService.GetAll();
+            var bicycles = _bicycleService.GetAll();
+            var stations = _stationService.GetAll();
+
+            ViewBag.Users = new SelectList(users.Select(u => new { Id = u.Id, Name = $"{u.FirstName} {u.LastName}" }), "Id", "Name");
+            ViewBag.Bicycles = new SelectList(bicycles, "Id", "BicycleCode");
+            ViewBag.Stations = new SelectList(stations, "Id", "Name");
+
             return View();
         }
 
@@ -42,6 +57,15 @@ namespace KampusTekWebApp.Controllers
                 _rentalService.Add(rental);
                 return RedirectToAction(nameof(Index));
             }
+
+            var users = _userService.GetAll();
+            var bicycles = _bicycleService.GetAll();
+            var stations = _stationService.GetAll();
+
+            ViewBag.Users = new SelectList(users.Select(u => new { Id = u.Id, Name = $"{u.FirstName} {u.LastName}" }), "Id", "Name", rental.UserId);
+            ViewBag.Bicycles = new SelectList(bicycles, "Id", "BicycleCode", rental.BicycleId);
+            ViewBag.Stations = new SelectList(stations, "Id", "Name", rental.StartStationId);
+
             return View(rental);
         }
 
@@ -50,6 +74,14 @@ namespace KampusTekWebApp.Controllers
             var rental = _rentalService.GetById(id);
             if (rental == null)
                 return NotFound();
+
+            var users = _userService.GetAll();
+            var bicycles = _bicycleService.GetAll();
+            var stations = _stationService.GetAll();
+
+            ViewBag.Users = new SelectList(users.Select(u => new { Id = u.Id, Name = $"{u.FirstName} {u.LastName}" }), "Id", "Name", rental.UserId);
+            ViewBag.Bicycles = new SelectList(bicycles, "Id", "BicycleCode", rental.BicycleId);
+            ViewBag.Stations = new SelectList(stations, "Id", "Name", rental.StartStationId);
 
             return View(rental);
         }
@@ -63,6 +95,15 @@ namespace KampusTekWebApp.Controllers
                 _rentalService.Update(rental);
                 return RedirectToAction(nameof(Index));
             }
+
+            var users = _userService.GetAll();
+            var bicycles = _bicycleService.GetAll();
+            var stations = _stationService.GetAll();
+
+            ViewBag.Users = new SelectList(users.Select(u => new { Id = u.Id, Name = $"{u.FirstName} {u.LastName}" }), "Id", "Name", rental.UserId);
+            ViewBag.Bicycles = new SelectList(bicycles, "Id", "BicycleCode", rental.BicycleId);
+            ViewBag.Stations = new SelectList(stations, "Id", "Name", rental.StartStationId);
+
             return View(rental);
         }
 

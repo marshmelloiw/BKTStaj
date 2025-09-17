@@ -15,6 +15,7 @@ builder.Services.AddScoped<IUserTypeService, UserTypeService>();
 builder.Services.AddScoped<IStationService, StationService>();
 builder.Services.AddScoped<IBicycleService, BicycleService>();
 builder.Services.AddScoped<IRentalService, RentalService>();
+builder.Services.AddScoped<IMaintenanceService, MaintenanceService>();
 
 var app = builder.Build();
 

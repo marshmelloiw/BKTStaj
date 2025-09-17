@@ -1,33 +1,49 @@
 ﻿@model KampusTek.Entities.Rental
 
 @{
-    ViewData["Title"] = "Yeni Kiralama";
+    ViewData["Title"] = "Create Rental";
 }
 
-<h2>Yeni Kiralama Ekle</h2>
+<h2>Create New Rental</h2>
 
 <form asp-action="Create" method="post">
     <div class="form-group">
-        <label>Kullanıcı ID</label>
-        <input asp-for="UserId" class="form-control" type="number" />
+        <label asp-for="UserId">User</label>
+        <select asp-for="UserId" class="form-control" asp-items="@(ViewBag.Users as SelectList)">
+            <option value="">-- Select User --</option>
+        </select>
+        <span asp-validation-for="UserId" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label>Bisiklet ID</label>
-        <input asp-for="BicycleId" class="form-control" type="number" />
+        <label asp-for="BicycleId">Bicycle</label>
+        <select asp-for="BicycleId" class="form-control" asp-items="@(ViewBag.Bicycles as SelectList)">
+            <option value="">-- Select Bicycle --</option>
+        </select>
+        <span asp-validation-for="BicycleId" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label>Başlangıç İstasyon ID</label>
-        <input asp-for="StartStationId" class="form-control" type="number" />
+        <label asp-for="StartStationId">Start Station</label>
+        <select asp-for="StartStationId" class="form-control" asp-items="@(ViewBag.Stations as SelectList)">
+            <option value="">-- Select Start Station --</option>
+        </select>
+        <span asp-validation-for="StartStationId" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label>Bitiş İstasyon ID (Opsiyonel)</label>
-        <input asp-for="EndStationId" class="form-control" type="number" />
+        <label asp-for="EndStationId">End Station (Optional)</label>
+        <select asp-for="EndStationId" class="form-control" asp-items="@(ViewBag.Stations as SelectList)">
+            <option value="">-- Select End Station (Optional) --</option>
+        </select>
     </div>
     <div class="form-group">
-        <label>Başlangıç Zamanı</label>
+        <label asp-for="StartTime">Start Time</label>
         <input asp-for="StartTime" class="form-control" type="datetime-local" />
+        <span asp-validation-for="StartTime" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-success">Kaydet</button>
-    <a asp-action="Index" class="btn btn-secondary">Geri</a>
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
 </form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

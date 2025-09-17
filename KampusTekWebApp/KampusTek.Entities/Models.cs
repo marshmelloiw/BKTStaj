@@ -26,7 +26,7 @@ namespace KampusTek.Entities
         [Required]
         [Range(1, 2)]
         [Display(Name = "User Type")]
-        public int UserTypeId { get; set; } = 1;
+        public int UserTypeId { get; set; }
         
         public virtual UserType? UserType { get; set; }
         public virtual ICollection<Rental> Rentals { get; set; } = new List<Rental>();
@@ -35,7 +35,11 @@ namespace KampusTek.Entities
     public class Bicycle
     {
         public int Id { get; set; }
+        
+        [Required]
+        [Display(Name = "Bicycle Code")]
         public string BicycleCode { get; set; } = null!;
+        
         public string? Model { get; set; }
         public string? Color { get; set; }
         public string? Status { get; set; }
@@ -59,26 +63,54 @@ namespace KampusTek.Entities
     public class Rental
     {
         public int Id { get; set; }
+        
+        [Required]
+        [Display(Name = "User")]
         public int UserId { get; set; }
+        
+        [Required]
+        [Display(Name = "Bicycle")]
         public int BicycleId { get; set; }
+        
+        [Required]
+        [Display(Name = "Start Station")]
         public int StartStationId { get; set; }
+        
+        [Display(Name = "End Station")]
         public int? EndStationId { get; set; }
+        
+        [Required]
+        [Display(Name = "Start Time")]
         public DateTime StartTime { get; set; }
+        
+        [Display(Name = "Return Time")]
         public DateTime? ReturnTime { get; set; }
-        public virtual User User { get; set; } = null!;
-        public virtual Bicycle Bicycle { get; set; } = null!;
-        public virtual Station StartStation { get; set; } = null!;
+        
+        public virtual User? User { get; set; }
+        public virtual Bicycle? Bicycle { get; set; }
+        public virtual Station? StartStation { get; set; }
         public virtual Station? EndStation { get; set; }
     }
 
     public class Maintenance
     {
         public int Id { get; set; }
+        
+        [Required]
+        [Display(Name = "Bicycle")]
         public int BicycleId { get; set; }
+        
+        [Display(Name = "Description")]
         public string? Description { get; set; }
+        
+        [Required]
+        [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }
+        
+        [Display(Name = "End Date")]
         public DateTime? EndDate { get; set; }
-        public virtual Bicycle Bicycle { get; set; } = null!;
+        
+        public virtual Bicycle? Bicycle { get; set; }
     }
 
     public class UserType

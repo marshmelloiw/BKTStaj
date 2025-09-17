@@ -1,0 +1,48 @@
+@model IEnumerable<KampusTek.Entities.Maintenance>
+
+@{
+    ViewData["Title"] = "Maintenances";
+}
+
+<h2>Maintenances</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Bicycle</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var maintenance in Model)
+        {
+            <tr>
+                <td>@maintenance.Bicycle?.BicycleCode</td>
+                <td>@maintenance.Description</td>
+                <td>@maintenance.StartDate.ToString("yyyy-MM-dd")</td>
+                <td>@(maintenance.EndDate?.ToString("yyyy-MM-dd") ?? "Ongoing")</td>
+                <td>
+                    @if (maintenance.EndDate == null)
+                    {
+                        <span class="badge badge-warning">Ongoing</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-success">Completed</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@maintenance.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@maintenance.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@maintenance.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Create New Maintenance</a>

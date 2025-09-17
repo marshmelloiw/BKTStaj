@@ -1,16 +1,19 @@
 ﻿using KampusTek.Business.Abstract;
 using KampusTek.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace KampusTekWebApp.Controllers
 {
     public class UserController : Controller
     {
         private readonly IUserService _userService;
+        private readonly IUserTypeService _userTypeService;
 
-        public UserController(IUserService userService)
+        public UserController(IUserService userService, IUserTypeService userTypeService)
         {
             _userService = userService;
+            _userTypeService = userTypeService;
         }
 
         public IActionResult Index()
@@ -30,6 +33,8 @@ namespace KampusTekWebApp.Controllers
 
         public IActionResult Create()
         {
+            var userTypes = _userTypeService.GetAll();
+            ViewBag.UserTypes = new SelectList(userTypes, "Id", "Name");
             return View();
         }
 
@@ -43,6 +48,8 @@ namespace KampusTekWebApp.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
+            var userTypes = _userTypeService.GetAll();
+            ViewBag.UserTypes = new SelectList(userTypes, "Id", "Name", user.UserTypeId);
             return View(user);
         }
 
@@ -52,6 +59,8 @@ namespace KampusTekWebApp.Controllers
             if (user == null)
                 return NotFound();
 
+            var userTypes = _userTypeService.GetAll();
+            ViewBag.UserTypes = new SelectList(userTypes, "Id", "Name", user.UserTypeId);
             return View(user);
         }
 
@@ -65,6 +74,8 @@ namespace KampusTekWebApp.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
+            var userTypes = _userTypeService.GetAll();
+            ViewBag.UserTypes = new SelectList(userTypes, "Id", "Name", user.UserTypeId);
             return View(user);
         }
 

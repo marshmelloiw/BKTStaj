@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F6DDA02-7181-4D4D-9327-D1B1D155AC11}|KampusTek.Business\\KampusTek.Business.csproj|c:\\users\\melis\\source\\repos\\kampustekwebapp\\kampustek.business\\concrete\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F6DDA02-7181-4D4D-9327-D1B1D155AC11}|KampusTek.Business\\KampusTek.Business.csproj|solutionrelative:kampustek.business\\concrete\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E4A7D5C6-C964-415E-BFE8-E57A24517426}|KampusTek.Entities\\KampusTek.Entities.csproj|c:\\users\\melis\\source\\repos\\kampustekwebapp\\kampustek.entities\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4A7D5C6-C964-415E-BFE8-E57A24517426}|KampusTek.Entities\\KampusTek.Entities.csproj|solutionrelative:kampustek.entities\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE6731AC-3072-4007-AA6A-8DD245AF424A}|KampusTekWebApp\\KampusTekWebApp.csproj|c:\\users\\melis\\source\\repos\\kampustekwebapp\\kampustekwebapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE6731AC-3072-4007-AA6A-8DD245AF424A}|KampusTekWebApp\\KampusTekWebApp.csproj|solutionrelative:kampustekwebapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F6DDA02-7181-4D4D-9327-D1B1D155AC11}|KampusTek.Business\\KampusTek.Business.csproj|c:\\users\\melis\\source\\repos\\kampustekwebapp\\kampustek.business\\concrete\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F6DDA02-7181-4D4D-9327-D1B1D155AC11}|KampusTek.Business\\KampusTek.Business.csproj|solutionrelative:kampustek.business\\concrete\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE6731AC-3072-4007-AA6A-8DD245AF424A}|KampusTekWebApp\\KampusTekWebApp.csproj|c:\\users\\melis\\source\\repos\\kampustekwebapp\\kampustekwebapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DE6731AC-3072-4007-AA6A-8DD245AF424A}|KampusTekWebApp\\KampusTekWebApp.csproj|solutionrelative:kampustekwebapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE6731AC-3072-4007-AA6A-8DD245AF424A}|KampusTekWebApp\\KampusTekWebApp.csproj|c:\\users\\melis\\source\\repos\\kampustekwebapp\\kampustekwebapp\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DE6731AC-3072-4007-AA6A-8DD245AF424A}|KampusTekWebApp\\KampusTekWebApp.csproj|solutionrelative:kampustekwebapp\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DE6731AC-3072-4007-AA6A-8DD245AF424A}|KampusTekWebApp\\KampusTekWebApp.csproj|c:\\users\\melis\\source\\repos\\kampustekwebapp\\kampustekwebapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE6731AC-3072-4007-AA6A-8DD245AF424A}|KampusTekWebApp\\KampusTekWebApp.csproj|solutionrelative:kampustekwebapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE6731AC-3072-4007-AA6A-8DD245AF424A}|KampusTekWebApp\\KampusTekWebApp.csproj|c:\\users\\melis\\source\\repos\\kampustekwebapp\\kampustekwebapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE6731AC-3072-4007-AA6A-8DD245AF424A}|KampusTekWebApp\\KampusTekWebApp.csproj|solutionrelative:kampustekwebapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE6731AC-3072-4007-AA6A-8DD245AF424A}|KampusTekWebApp\\KampusTekWebApp.csproj|c:\\users\\melis\\source\\repos\\kampustekwebapp\\kampustekwebapp\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DE6731AC-3072-4007-AA6A-8DD245AF424A}|KampusTekWebApp\\KampusTekWebApp.csproj|solutionrelative:kampustekwebapp\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\KampusTekWebApp\\Program.cs",
               "RelativeDocumentMoniker": "KampusTekWebApp\\Program.cs",
@@ -43,7 +47,21 @@
               "ViewState": "AgIAAAgAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-15T14:52:59.479Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Models.cs",
+              "DocumentMoniker": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\KampusTek.Entities\\Models.cs",
+              "RelativeDocumentMoniker": "KampusTek.Entities\\Models.cs",
+              "ToolTip": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\KampusTek.Entities\\Models.cs",
+              "RelativeToolTip": "KampusTek.Entities\\Models.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T10:17:39.413Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -53,13 +71,14 @@
               "RelativeDocumentMoniker": "KampusTekWebApp\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\KampusTekWebApp\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "KampusTekWebApp\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABRAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-16T14:59:46.021Z"
+              "WhenOpened": "2025-09-16T14:59:46.021Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\KampusTekWebApp\\Views\\User\\Create.cshtml",
               "RelativeDocumentMoniker": "KampusTekWebApp\\Views\\User\\Create.cshtml",
@@ -71,20 +90,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\KampusTek.Business\\Concrete\\UserService.cs",
               "RelativeDocumentMoniker": "KampusTek.Business\\Concrete\\UserService.cs",
               "ToolTip": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\KampusTek.Business\\Concrete\\UserService.cs",
               "RelativeToolTip": "KampusTek.Business\\Concrete\\UserService.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAqwB8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-16T14:21:58.035Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\KampusTekWebApp\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "KampusTekWebApp\\Controllers\\UserController.cs",
@@ -92,8 +111,7 @@
               "RelativeToolTip": "KampusTekWebApp\\Controllers\\UserController.cs",
               "ViewState": "AgIAAD0AAAAAAAAAAAAuwAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T14:15:58.95Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T14:15:58.95Z"
             }
           ]
         }

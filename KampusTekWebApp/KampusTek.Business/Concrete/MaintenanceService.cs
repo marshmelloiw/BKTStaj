@@ -2,11 +2,6 @@
 using KampusTek.Data;
 using KampusTek.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KampusTek.Business.Concrete
 {
@@ -33,10 +28,10 @@ namespace KampusTek.Business.Concrete
 
         public void Delete(int id)
         {
-            var m = _context.Maintenances.Find(id);
-            if (m != null)
+            var maintenance = _context.Maintenances.Find(id);
+            if (maintenance != null)
             {
-                _context.Maintenances.Remove(m);
+                _context.Maintenances.Remove(maintenance);
                 _context.SaveChanges();
             }
         }

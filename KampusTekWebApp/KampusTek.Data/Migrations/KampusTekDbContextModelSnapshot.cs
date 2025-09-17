@@ -32,7 +32,7 @@ namespace KampusTek.Data.Migrations
 
                     b.Property<string>("BicycleCode")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Color")
                         .HasColumnType("nvarchar(max)");
@@ -47,6 +47,9 @@ namespace KampusTek.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BicycleCode")
+                        .IsUnique();
 
                     b.HasIndex("CurrentStationId");
 
@@ -196,12 +199,12 @@ namespace KampusTek.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Öğrenci"
+                            Name = "Student"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Personel"
+                            Name = "Staff"
                         });
                 });
 
@@ -209,7 +212,8 @@ namespace KampusTek.Data.Migrations
                 {
                     b.HasOne("KampusTek.Entities.Station", "CurrentStation")
                         .WithMany("Bicycles")
-                        .HasForeignKey("CurrentStationId");
+                        .HasForeignKey("CurrentStationId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("CurrentStation");
                 });

@@ -1,33 +1,38 @@
 ﻿@model KampusTek.Entities.Bicycle
 
 @{
-    ViewData["Title"] = "Yeni Bisiklet";
+    ViewData["Title"] = "Create Bicycle";
 }
 
-<h2>Yeni Bisiklet Ekle</h2>
+<h2>Create New Bicycle</h2>
 
 <form asp-action="Create" method="post">
     <div class="form-group">
-        <label>Kod</label>
+        <label asp-for="BicycleCode">Bicycle Code</label>
         <input asp-for="BicycleCode" class="form-control" />
+        <span asp-validation-for="BicycleCode" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label>Model</label>
+        <label asp-for="Model">Model</label>
         <input asp-for="Model" class="form-control" />
     </div>
     <div class="form-group">
-        <label>Renk</label>
+        <label asp-for="Color">Color</label>
         <input asp-for="Color" class="form-control" />
     </div>
     <div class="form-group">
-        <label>Durum</label>
+        <label asp-for="Status">Status</label>
         <input asp-for="Status" class="form-control" />
     </div>
     <div class="form-group">
-        <label>İstasyon ID</label>
+        <label asp-for="CurrentStationId">Station ID</label>
         <input asp-for="CurrentStationId" class="form-control" type="number" />
     </div>
 
-    <button type="submit" class="btn btn-success">Kaydet</button>
-    <a asp-action="Index" class="btn btn-secondary">Geri</a>
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
 </form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
