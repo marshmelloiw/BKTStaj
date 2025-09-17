@@ -51,13 +51,6 @@ public class KampusTekDbContext : DbContext
 }
 ```
 
-**Özellikler:** 
-- **Entity Framework Core** ile SQL Server bağlantısı
-- **Fluent API** ile ilişki konfigürasyonları
-- **Unique constraint** bisiklet kodları için
-- **Seed data** ile UserType verileri
-
-
 ## Service Katmanı (Business Logic)
 
 **Service Pattern** kullanılıyor.
