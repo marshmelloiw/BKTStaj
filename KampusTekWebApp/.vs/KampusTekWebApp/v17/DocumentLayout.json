@@ -47,8 +47,7 @@
               "ViewState": "AgIAAAgAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-15T14:52:59.479Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -58,7 +57,7 @@
               "RelativeDocumentMoniker": "KampusTek.Entities\\Models.cs",
               "ToolTip": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\KampusTek.Entities\\Models.cs",
               "RelativeToolTip": "KampusTek.Entities\\Models.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAA0wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-17T10:17:39.413Z",
               "EditorCaption": ""
@@ -73,8 +72,7 @@
               "RelativeToolTip": "KampusTekWebApp\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-16T14:59:46.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T14:59:46.021Z"
             },
             {
               "$type": "Document",
@@ -98,8 +96,7 @@
               "RelativeToolTip": "KampusTek.Business\\Concrete\\UserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T14:21:58.035Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T14:21:58.035Z"
             },
             {
               "$type": "Document",

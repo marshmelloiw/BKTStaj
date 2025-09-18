@@ -14,5 +14,6 @@ namespace KampusTek.Business.Abstract
         void Delete(int id);
         Bicycle GetById(int id);
         List<Bicycle> GetAll();
+        string GetNextBicycleCode();
     }
 }
