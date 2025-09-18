@@ -28,12 +28,12 @@ public class User
 
 **Ana Modeller:** 
 - **User**: Kullanıcı bilgileri (Ad, soyad, email,
-telefon, kullanıcı tipi)\
+telefon, kullanıcı tipi)
 - **Bicycle**: Bisiklet bilgileri (Kod, model, renk, durum, mevcut
-istasyon)\
-- **Station**: İstasyon bilgileri (İsim, konum, kapasite)\
-- **Rental**: Kiralama işlemleri (Başlangıç/bitiş zamanı, istasyonlar)\
-- **Maintenance**: Bakım kayıtları\
+istasyon)
+- **Station**: İstasyon bilgileri (İsim, konum, kapasite)
+- **Rental**: Kiralama işlemleri (Başlangıç/bitiş zamanı, istasyonlar)
+- **Maintenance**: Bakım kayıtları
 - **UserType**: Kullanıcı tipleri (Student/Staff)
 
 
@@ -50,13 +50,6 @@ public class KampusTekDbContext : DbContext
     public DbSet<Maintenance> Maintenances { get; set; }
 }
 ```
-
-**Özellikler:** 
-- **Entity Framework Core** ile SQL Server bağlantısı
-- **Fluent API** ile ilişki konfigürasyonları
-- **Unique constraint** bisiklet kodları için
-- **Seed data** ile UserType verileri
-
 
 ## Service Katmanı (Business Logic)
 
@@ -90,11 +83,11 @@ public class UserService : IUserService
 }
 ```
 
-**Service'ler:** - **UserService**: Kullanıcı CRUD işlemleri\
-- **BicycleService**: Bisiklet CRUD işlemleri\
-- **StationService**: İstasyon CRUD işlemleri\
-- **RentalService**: Kiralama işlemleri (EndRental özel metodu)\
-- **MaintenanceService**: Bakım işlemleri\
+**Service'ler:** - **UserService**: Kullanıcı CRUD işlemleri
+- **BicycleService**: Bisiklet CRUD işlemleri
+- **StationService**: İstasyon CRUD işlemleri
+- **RentalService**: Kiralama işlemleri (EndRental özel metodu)
+- **MaintenanceService**: Bakım işlemleri
 - **UserTypeService**: Kullanıcı tipi işlemleri
 
 
@@ -149,10 +142,10 @@ builder.Services.AddScoped<IMaintenanceService, MaintenanceService>();
 
 ## İlişkiler (Relationships)
 
--   **User ↔ UserType** (Many-to-One)\
--   **User ↔ Rental** (One-to-Many)\
--   **Bicycle ↔ Station** (Many-to-One)\
--   **Bicycle ↔ Rental** (One-to-Many)\
--   **Bicycle ↔ Maintenance** (One-to-Many)\
+-   **User ↔ UserType** (Many-to-One)
+-   **User ↔ Rental** (One-to-Many)
+-   **Bicycle ↔ Station** (Many-to-One)
+-   **Bicycle ↔ Rental** (One-to-Many)
+-   **Bicycle ↔ Maintenance** (One-to-Many)
 -   **Station ↔ Rental** (One-to-Many, Start/End)
 
