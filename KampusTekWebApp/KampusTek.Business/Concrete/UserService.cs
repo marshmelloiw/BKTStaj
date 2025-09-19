@@ -49,6 +49,7 @@ namespace KampusTek.Business.Concrete
         {
             return _context.Users
                 .Include(u => u.UserType)
+                .AsNoTracking()
                 .ToList();
         }
     }

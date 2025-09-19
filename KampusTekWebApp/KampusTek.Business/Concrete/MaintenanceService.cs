@@ -40,6 +40,7 @@ namespace KampusTek.Business.Concrete
         {
             return _context.Maintenances
                 .Include(m => m.Bicycle)
+                .AsNoTracking()
                 .FirstOrDefault(m => m.Id == id);
         }
 
@@ -47,6 +48,7 @@ namespace KampusTek.Business.Concrete
         {
             return _context.Maintenances
                 .Include(m => m.Bicycle)
+                .AsNoTracking()
                 .ToList();
         }
     }

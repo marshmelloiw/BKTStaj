@@ -54,12 +54,16 @@ namespace KampusTek.Business.Concrete
         public Bicycle GetById(int id)
         {
             return _context.Bicycles
+                .Include(b => b.CurrentStation)
+                .AsNoTracking()
                 .FirstOrDefault(b => b.Id == id);
         }
 
         public List<Bicycle> GetAll()
         {
             return _context.Bicycles
+                .Include(b => b.CurrentStation)
+                .AsNoTracking()
                 .ToList();
         }
 
@@ -68,6 +72,7 @@ namespace KampusTek.Business.Concrete
             var lastBicycle = _context.Bicycles
                 .Where(b => b.BicycleCode.StartsWith("B"))
                 .OrderByDescending(b => b.BicycleCode)
+                .AsNoTracking()
                 .FirstOrDefault();
 
             if (lastBicycle == null)

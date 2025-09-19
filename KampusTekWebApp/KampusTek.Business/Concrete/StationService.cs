@@ -56,6 +56,7 @@ namespace KampusTek.Business.Concrete
         public List<Station> GetAll()
         {
             return _context.Stations
+                .AsNoTracking()
                 .ToList();
         }
     }

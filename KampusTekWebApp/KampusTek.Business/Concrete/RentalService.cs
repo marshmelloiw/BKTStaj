@@ -49,6 +49,7 @@ namespace KampusTek.Business.Concrete
                 .Include(r => r.Bicycle)
                 .Include(r => r.StartStation)
                 .Include(r => r.EndStation)
+                .AsNoTracking()
                 .FirstOrDefault(r => r.Id == id);
         }
 
@@ -59,6 +60,7 @@ namespace KampusTek.Business.Concrete
                 .Include(r => r.Bicycle)
                 .Include(r => r.StartStation)
                 .Include(r => r.EndStation)
+                .AsNoTracking()
                 .ToList();
         }
     }
