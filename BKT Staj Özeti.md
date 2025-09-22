@@ -117,3 +117,26 @@ Tüm functionality'leri test ettikten sonra projeyi başarıyla tamamladım. CRU
 ## Day 10 - Dokümantasyon ve İleri Seviye Konular
 
 Bugünkü çalışmamda Entity Framework’ün kritik konularına odaklandım. Öncelikle iki farklı loading yöntemi olan Lazy Loading ve Eager Loading hakkında detaylı araştırma yaparak kullanım senaryolarını ve avantaj/dezavantajlarını öğrendim. Ardından, tracking mekanizmasını inceledim ve özellikle AsNoTracking() kullanımının performans üzerindeki etkilerini araştırdım. Bu sayede Entity Framework’te veri yükleme stratejilerini ve değişiklik izleme yapısını daha iyi kavramış oldum. En son markdown dosyası olarak GitHub'a yükledim.
+
+---
+
+## Day 11
+Proje bazında kütüphane araştırması yaptım. Bazı teknik konuların daha da oturması için kod üzerinde okuma yaptım
+Akşam mentör ile meet yaparak ertesi günü çalışması için araştırma konuları belirledik
+
+---
+
+## Day 12
+Araştırma konuları üzerinde detaylı incelemeler yapıp öğrenmeye çalıştım. Özellikle teknik kavramları derinlemesine okuyup notlar çıkararak konuları anlamaya odaklandım.
+Üzerine çalıştığım konular:
+- C#’ta Generics
+- C# Collection Sınıfları
+- Repository Pattern ve Generic Repository
+- Abstract Sınıflar ve Kullanım Amaçları
+- Bellek Yönetimi: Heap ve Stack
+- Veritabanı Bağlantıları ve Trusted Connection
+- Constructor Kavramı ve Overloading
+- Web Güvenliği: CSRF ve Anti-Forgery Token
+- ASP.NET Core’da Veri Taşıma Mekanizmaları: ViewBag, TempData, ViewData
+- C# readonly Anahtar Kelimesi
+- Dependency injection, constructor injection, property injection
