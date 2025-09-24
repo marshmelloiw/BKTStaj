@@ -151,3 +151,8 @@ Database’e anlamlı veriler kaydederek tüm tabloları doldurdum. Ardından SQ
 ## Day 14
 AdventureWorks 2022 veritabanı üzerinde pratik yaptım. Özellikle JOIN çeşitleri ve GROUP BY fonksiyonlarını AdventureWorks tablolarında uygulayarak öğrendiklerimi pekiştirmeye çalıştım.
 Rahatsızlandığım için bu günü verimli değerlendiremedim fakat temel sorgular üzerinde çalışmayı sürdürdüm.
+
+---
+
+## Day 15
+Northwind Database'i üzerinde SQL sorgularına çalıştım. Mentörümün verdiği sorulara uygun SQL sorgularını yazdım.
