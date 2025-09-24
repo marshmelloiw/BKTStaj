@@ -140,3 +140,14 @@ Araştırma konuları üzerinde detaylı incelemeler yapıp öğrenmeye çalış
 - ASP.NET Core’da Veri Taşıma Mekanizmaları: ViewBag, TempData, ViewData
 - C# readonly Anahtar Kelimesi
 - Dependency injection, constructor injection, property injection
+
+---
+
+## Day 13
+Database’e anlamlı veriler kaydederek tüm tabloları doldurdum. Ardından SQL tarafında JOIN çeşitleri (INNER, LEFT, RIGHT, FULL OUTER) ve GROUP BY fonksiyonlarını (COUNT, SUM, AVG, MIN, MAX) çalıştım. Bu sorguların LINQ karşılıklarını da inceledim ve örneklerle pekiştirdim. Böylece SQL ve LINQ arasındaki benzerlikleri daha iyi kavradım.
+
+---
+
+## Day 14
+AdventureWorks 2022 veritabanı üzerinde pratik yaptım. Özellikle JOIN çeşitleri ve GROUP BY fonksiyonlarını AdventureWorks tablolarında uygulayarak öğrendiklerimi pekiştirmeye çalıştım.
+Rahatsızlandığım için bu günü verimli değerlendiremedim fakat temel sorgular üzerinde çalışmayı sürdürdüm.
