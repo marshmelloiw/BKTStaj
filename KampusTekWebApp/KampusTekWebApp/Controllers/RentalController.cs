@@ -120,8 +120,22 @@ namespace KampusTekWebApp.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            _rentalService.Update(new Rental { Id = id, ReturnTime = DateTime.Now });
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                _rentalService.Delete(id);
+                TempData["SuccessMessage"] = "Kiralama kaydı başarıyla silindi.";
+                return RedirectToAction(nameof(Index));
+            }
+            catch (InvalidOperationException ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+                return RedirectToAction(nameof(Delete), new { id = id });
+            }
+            catch (Exception)
+            {
+                TempData["ErrorMessage"] = "Kiralama kaydı silinirken bir hata oluştu.";
+                return RedirectToAction(nameof(Index));
+            }
         }
     }
 }

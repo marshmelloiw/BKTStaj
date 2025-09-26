@@ -172,4 +172,5 @@ C:\Users\melis\source\repos\KampusTekWebApp\KampusTekWebApp\obj\Debug\net8.0\ref
 C:\Users\melis\source\repos\KampusTekWebApp\KampusTekWebApp\obj\Debug\net8.0\KampusTekWebApp.pdb
 C:\Users\melis\source\repos\KampusTekWebApp\KampusTekWebApp\obj\Debug\net8.0\KampusTekWebApp.genruntimeconfig.cache
 C:\Users\melis\source\repos\KampusTekWebApp\KampusTekWebApp\obj\Debug\net8.0\ref\KampusTekWebApp.dll
+C:\Users\melis\source\repos\KampusTekWebApp\KampusTekWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\melis\source\repos\KampusTekWebApp\KampusTekWebApp\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

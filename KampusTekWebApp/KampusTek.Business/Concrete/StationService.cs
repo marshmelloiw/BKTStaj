@@ -2,58 +2,50 @@
 using KampusTek.Data;
 using KampusTek.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KampusTek.Business.Concrete
 {
-    public class StationService : IStationService
+    public class StationService : GenericService<Station>, IStationService
     {
         private readonly KampusTekDbContext _context;
 
-        public StationService(KampusTekDbContext context)
+        public StationService(KampusTekDbContext context) : base(new Data.Concrete.GenericRepository<Station>(context))
         {
             _context = context;
         }
 
-        public void Add(Station station)
+        public override void Delete(int id)
         {
-            _context.Stations.Add(station);
-            _context.SaveChanges();
-        }
-
-        public void Update(Station station)
-        {
-            _context.Stations.Update(station);
-            _context.SaveChanges();
-        }
-
-        public void Delete(int id)
-        {
-            var station = _context.Stations.Find(id);
+            var station = _context.Stations
+                .Include(s => s.Bicycles)
+                .Include(s => s.RentalsAsStart)
+                .Include(s => s.RentalsAsEnd)
+                .FirstOrDefault(s => s.Id == id);
+                
             if (station != null)
             {
+                // İstasyonda bisiklet var mı kontrol et
+                if (station.Bicycles.Any())
+                {
+                    throw new InvalidOperationException("Bu istasyonda bisikletler bulunuyor. Önce bisikletleri başka istasyona taşıyın.");
+                }
+                
+                // Bu istasyondan başlayan veya biten aktif kiralama var mı kontrol et
+                var activeRentals = station.RentalsAsStart.Any(r => r.ReturnTime == null) || 
+                                  station.RentalsAsEnd.Any(r => r.ReturnTime == null);
+                if (activeRentals)
+                {
+                    throw new InvalidOperationException("Bu istasyonla ilgili aktif kiralama işlemleri bulunuyor. Silme işlemi yapılamaz.");
+                }
+                
                 _context.Stations.Remove(station);
                 _context.SaveChanges();
             }
         }
 
-        public void Delete(Station station)
-        {
-            _context.Stations.Remove(station);
-            _context.SaveChanges();
-        }
-
-        public Station GetById(int id)
-        {
-            return _context.Stations
-                .FirstOrDefault(s => s.Id == id);
-        }
-
-        public List<Station> GetAll()
+        public override List<Station> GetAll()
         {
             return _context.Stations
                 .AsNoTracking()

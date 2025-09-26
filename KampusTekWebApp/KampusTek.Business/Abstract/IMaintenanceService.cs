@@ -2,12 +2,7 @@
 
 namespace KampusTek.Business.Abstract
 {
-    public interface IMaintenanceService
+    public interface IMaintenanceService : IGenericService<Maintenance>
     {
-        void Add(Maintenance maintenance);
-        void Update(Maintenance maintenance);
-        void Delete(int id);
-        Maintenance GetById(int id);
-        List<Maintenance> GetAll();
     }
 }

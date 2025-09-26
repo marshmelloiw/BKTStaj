@@ -5,30 +5,36 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KampusTek.Business.Concrete
 {
-    public class RentalService : IRentalService
+    public class RentalService : GenericService<Rental>, IRentalService
     {
         private readonly KampusTekDbContext _context;
 
-        public RentalService(KampusTekDbContext context)
+        public RentalService(KampusTekDbContext context) : base(new Data.Concrete.GenericRepository<Rental>(context))
         {
             _context = context;
         }
 
-        public void Add(Rental rental)
+        public override void Delete(int id)
         {
-            _context.Rentals.Add(rental);
-            _context.SaveChanges();
-        }
-
-        public void Update(Rental rental)
-        {
-            _context.Rentals.Update(rental);
-            _context.SaveChanges();
+            var rental = _context.Rentals
+                .Include(r => r.User)
+                .Include(r => r.Bicycle)
+                .FirstOrDefault(r => r.Id == id);
+                
+            if (rental != null)
+            {
+                // Aktif kiralama var mı kontrol et (ReturnTime null olan kiralama)
+                if (rental.ReturnTime == null)
+                {
+                    throw new InvalidOperationException("Bu kiralama işlemi henüz tamamlanmamış. Önce kiralama işlemini tamamlayın.");
+                }
+                
+                _context.Rentals.Remove(rental);
+                _context.SaveChanges();
+            }
         }
 
         public void EndRental(int rentalId, int endStationId)
@@ -42,7 +48,7 @@ namespace KampusTek.Business.Concrete
             }
         }
 
-        public Rental GetById(int id)
+        public override Rental GetById(int id)
         {
             return _context.Rentals
                 .Include(r => r.User)
@@ -53,7 +59,7 @@ namespace KampusTek.Business.Concrete
                 .FirstOrDefault(r => r.Id == id);
         }
 
-        public List<Rental> GetAll()
+        public override List<Rental> GetAll()
         {
             return _context.Rentals
                 .Include(r => r.User)

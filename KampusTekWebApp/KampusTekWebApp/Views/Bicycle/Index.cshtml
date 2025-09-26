@@ -47,9 +47,9 @@
                 <td>@bicycle.Status</td>
                 <td>@bicycle.CurrentStation?.Name</td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@bicycle.Id">Details</a> |
-                    <a asp-action="Edit" asp-route-id="@bicycle.Id">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@bicycle.Id">Delete</a>
+                    <a asp-action="Details" asp-route-id="@bicycle.Id" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="Edit" asp-route-id="@bicycle.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@bicycle.Id" class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>
         }

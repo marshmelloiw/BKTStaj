@@ -110,7 +110,7 @@ namespace KampusTekWebApp.Controllers
                 TempData["ErrorMessage"] = ex.Message;
                 return RedirectToAction(nameof(Delete), new { id = id });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 TempData["ErrorMessage"] = "Bisiklet silinirken bir hata oluştu.";
                 return RedirectToAction(nameof(Index));

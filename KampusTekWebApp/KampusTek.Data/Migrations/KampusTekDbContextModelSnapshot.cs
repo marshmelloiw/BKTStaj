@@ -169,6 +169,12 @@ namespace KampusTek.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte[]>("PasswordHash")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<byte[]>("PasswordSalt")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<int>("UserTypeId")
                         .HasColumnType("int");
 

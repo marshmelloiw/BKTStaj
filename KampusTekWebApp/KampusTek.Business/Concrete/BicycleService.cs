@@ -5,33 +5,19 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KampusTek.Business.Concrete
 {
-    public class BicycleService : IBicycleService
+    public class BicycleService : GenericService<Bicycle>, IBicycleService
     {
         private readonly KampusTekDbContext _context;
 
-        public BicycleService(KampusTekDbContext context)
+        public BicycleService(KampusTekDbContext context) : base(new Data.Concrete.GenericRepository<Bicycle>(context))
         {
             _context = context;
         }
 
-        public void Add(Bicycle bicycle)
-        {
-            _context.Bicycles.Add(bicycle);
-            _context.SaveChanges();
-        }
-
-        public void Update(Bicycle bicycle)
-        {
-            _context.Bicycles.Update(bicycle);
-            _context.SaveChanges();
-        }
-
-        public void Delete(int id)
+        public override void Delete(int id)
         {
             var bicycle = _context.Bicycles
                 .Include(b => b.Rentals)
@@ -51,7 +37,7 @@ namespace KampusTek.Business.Concrete
             }
         }
 
-        public Bicycle GetById(int id)
+        public override Bicycle GetById(int id)
         {
             return _context.Bicycles
                 .Include(b => b.CurrentStation)
@@ -59,7 +45,7 @@ namespace KampusTek.Business.Concrete
                 .FirstOrDefault(b => b.Id == id);
         }
 
-        public List<Bicycle> GetAll()
+        public override List<Bicycle> GetAll()
         {
             return _context.Bicycles
                 .Include(b => b.CurrentStation)

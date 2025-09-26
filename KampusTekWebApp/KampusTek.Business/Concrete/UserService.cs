@@ -7,45 +7,43 @@ using System.Linq;
 
 namespace KampusTek.Business.Concrete
 {
-    public class UserService : IUserService
+    public class UserService : GenericService<User>, IUserService
     {
         private readonly KampusTekDbContext _context;
 
-        public UserService(KampusTekDbContext context)
+        public UserService(KampusTekDbContext context) : base(new Data.Concrete.GenericRepository<User>(context))
         {
             _context = context;
         }
 
-        public void Add(User user)
+        public override void Delete(int id)
         {
-            _context.Users.Add(user);
-            _context.SaveChanges();
-        }
-
-        public void Update(User user)
-        {
-            _context.Users.Update(user);
-            _context.SaveChanges();
-        }
-
-        public void Delete(int id)
-        {
-            var user = _context.Users.Find(id);
+            var user = _context.Users
+                .Include(u => u.Rentals)
+                .FirstOrDefault(u => u.Id == id);
+                
             if (user != null)
             {
+                // Aktif kiralama var mı kontrol et (ReturnTime null olan kiralama)
+                var activeRental = user.Rentals.Any(r => r.ReturnTime == null);
+                if (activeRental)
+                {
+                    throw new InvalidOperationException("Bu kullanıcının aktif bir kiralama işlemi bulunuyor. Silme işlemi yapılamaz.");
+                }
+                
                 _context.Users.Remove(user);
                 _context.SaveChanges();
             }
         }
 
-        public User GetById(int id)
+        public override User GetById(int id)
         {
             return _context.Users
                 .Include(u => u.UserType)
                 .FirstOrDefault(u => u.Id == id);
         }
 
-        public List<User> GetAll()
+        public override List<User> GetAll()
         {
             return _context.Users
                 .Include(u => u.UserType)

@@ -4,18 +4,37 @@
     ViewData["Title"] = "Kiralama Sil";
 }
 
-<h2>Kiralama Sil</h2>
+<h2>Kiralama Kaydını Sil</h2>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["ErrorMessage"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
 
 <div>
-    <h4>@Model.User?.FirstName @Model.User?.LastName kullanıcısının kiralamasını silmek istediğinize emin misiniz?</h4>
+    <h4>@Model.User?.FirstName @Model.User?.LastName kullanıcısının kiralama kaydını silmek istediğinize emin misiniz?</h4>
     <p><b>Bisiklet:</b> @Model.Bicycle?.BicycleCode</p>
     <p><b>Başlangıç:</b> @Model.StartStation?.Name</p>
     <p><b>Bitiş:</b> @Model.EndStation?.Name</p>
     <p><b>Başlangıç Zamanı:</b> @Model.StartTime</p>
+    @if (Model.ReturnTime != null)
+    {
+        <p><b>Dönüş Zamanı:</b> @Model.ReturnTime</p>
+        <div class="alert alert-info">Bu kiralama işlemi tamamlanmış. Kayıt silinebilir.</div>
+    }
+    else
+    {
+        <div class="alert alert-warning">Bu kiralama işlemi henüz tamamlanmamış. Önce kiralama işlemini tamamlamanız gerekir.</div>
+    }
 </div>
 
-<form asp-action="DeleteConfirmed" method="post">
+<form asp-action="Delete" method="post">
     <input type="hidden" asp-for="Id" />
-    <button type="submit" class="btn btn-danger">Sil</button>
+    <button type="submit" class="btn btn-danger">Kiralama Kaydını Sil</button>
     <a asp-action="Index" class="btn btn-secondary">İptal</a>
 </form>

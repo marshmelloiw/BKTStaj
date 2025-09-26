@@ -20,7 +20,7 @@ namespace KampusTek.Entities
         public string Email { get; set; } = null!;
         
         [Required]
-        [RegularExpression(@"^(\+90|0)?5\d{9}$", ErrorMessage = "Please enter a valid phone number (example: 05xxxxxxxxx).")]
+        [Phone]
         [Display(Name = "Phone Number")]
         public string CellNumber { get; set; } = null!;
         
@@ -28,7 +28,10 @@ namespace KampusTek.Entities
         [Range(1, 2)]
         [Display(Name = "User Type")]
         public int UserTypeId { get; set; }
-        
+
+        public byte[]? PasswordHash { get; set; }
+        public byte[]? PasswordSalt { get; set; }
+
         public virtual UserType? UserType { get; set; }
         public virtual ICollection<Rental> Rentals { get; set; } = new List<Rental>();
     }

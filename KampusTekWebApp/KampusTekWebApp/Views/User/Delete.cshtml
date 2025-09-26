@@ -6,8 +6,21 @@
 
 <h2>Delete User</h2>
 
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["ErrorMessage"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
 <div>
     <h4>Are you sure you want to delete user @Model.FirstName @Model.LastName?</h4>
+    <p><b>Email:</b> @Model.Email</p>
+    <p><b>Phone:</b> @Model.CellNumber</p>
+    <p><b>User Type:</b> @Model.UserType?.Name</p>
 </div>
 
 <form asp-action="Delete" method="post">
