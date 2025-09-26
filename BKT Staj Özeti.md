@@ -43,7 +43,7 @@ Mentor ile yapılan kod yazma seansı oldukça verimli geçti. Özellikle tablo 
 Bugün yazılım mimarisi konularına odaklandım. N-tier architecture kavramını detaylı olarak inceledim ve repository pattern implementasyonunu öğrendim.
 
 **Çalışılan Konular:**
-- N-tier architecture prensiплeri
+- N-tier architecture prensipleri
 - Repository pattern implementasyonu
 - Genel design patterns kavramları
 
@@ -61,7 +61,8 @@ Bugün veritabanı tasarımımda önemli iyileştirmeler yaptım. ID alanları i
 - Usertype için ayrı tablo oluşturma
 - Status alanları ekleme
 - Veri tipi optimizasyonları (int vs varchar karşılaştırması)
-- Location alanları için enlem-boylam yapısı
+  
++ Location alanları için enlem-boylam yapısı
 
 Entity Framework kullanarak veritabanımı C# projeme bağladım. Code-first yaklaşımı yerine database-first yaklaşımını kullanarak mevcut veritabanından otomatik model oluşturdum.
 
@@ -155,4 +156,11 @@ Rahatsızlandığım için bu günü verimli değerlendiremedim fakat temel sorg
 ---
 
 ## Day 15
-Northwind Database'i üzerinde SQL sorgularına çalıştım. Mentörümün verdiği sorulara uygun SQL sorgularını yazdım.
+Northwind Database'i üzerinde SQL sorgularına çalıştım. Mentörümün verdiği sorulara uygun SQL sorgularını yazdım. Github'a sorguların bulunduğu dosyayı ekledim
+
+---
+
+## Day 16
+AuthController üzerinden login endpointi geliştirdim ve girişte kullanıcıya JWT token üretilmesini sağladım. User tablosuna şifre güvenliği için hash ve salt alanlarını ekledim. Program.cs tarafında hem Cookie Authentication (MVC) hem de JWT Authentication (API) yapılandırmasını yaptım. Ayrıca test amaçlı kullanıcı seeding ekledim.
+
+---
