@@ -157,3 +157,10 @@ Rahatsızlandığım için bu günü verimli değerlendiremedim fakat temel sorg
 
 ## Day 15
 Northwind Database'i üzerinde SQL sorgularına çalıştım. Mentörümün verdiği sorulara uygun SQL sorgularını yazdım. Github'a sorguların bulunduğu dosyayı ekledim
+
+---
+
+## Day 16
+AuthController üzerinden login endpointi geliştirdim ve girişte kullanıcıya JWT token üretilmesini sağladım. User tablosuna şifre güvenliği için hash ve salt alanlarını ekledim. Program.cs tarafında hem Cookie Authentication (MVC) hem de JWT Authentication (API) yapılandırmasını yaptım. Ayrıca test amaçlı kullanıcı seeding ekledim.
+
+---
