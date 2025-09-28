@@ -36,6 +36,23 @@ namespace KampusTekWebApp.Controllers
             public DateTime ExpiresAtUtc { get; set; }
         }
 
+        public class RegisterRequest
+        {
+            public string FirstName { get; set; } = string.Empty;
+            public string LastName { get; set; } = string.Empty;
+            public string Email { get; set; } = string.Empty;
+            public string CellNumber { get; set; } = string.Empty;
+            public int UserTypeId { get; set; }
+            public string Password { get; set; } = string.Empty;
+        }
+
+        public class RegisterResponse
+        {
+            public int UserId { get; set; }
+            public string AccessToken { get; set; } = string.Empty;
+            public DateTime ExpiresAtUtc { get; set; }
+        }
+
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
@@ -61,6 +78,56 @@ namespace KampusTekWebApp.Controllers
             var token = GenerateJwt(user);
             return Ok(new LoginResponse
             {
+                AccessToken = token.token,
+                ExpiresAtUtc = token.expiresAtUtc
+            });
+        }
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+        {
+            if (string.IsNullOrWhiteSpace(request.FirstName) ||
+                string.IsNullOrWhiteSpace(request.LastName) ||
+                string.IsNullOrWhiteSpace(request.Email) ||
+                string.IsNullOrWhiteSpace(request.CellNumber) ||
+                string.IsNullOrWhiteSpace(request.Password) ||
+                request.UserTypeId <= 0)
+            {
+                return BadRequest("All fields are required.");
+            }
+
+            var emailExists = await _dbContext.Users.AnyAsync(u => u.Email == request.Email);
+            if (emailExists)
+            {
+                return Conflict("Email already in use.");
+            }
+
+            var userTypeExists = await _dbContext.UserTypes.AnyAsync(ut => ut.Id == request.UserTypeId);
+            if (!userTypeExists)
+            {
+                return BadRequest("Invalid user type.");
+            }
+
+            CreatePasswordHash(request.Password, out var passwordHash, out var passwordSalt);
+
+            var user = new User
+            {
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                Email = request.Email,
+                CellNumber = request.CellNumber,
+                UserTypeId = request.UserTypeId,
+                PasswordHash = passwordHash,
+                PasswordSalt = passwordSalt
+            };
+
+            _dbContext.Users.Add(user);
+            await _dbContext.SaveChangesAsync();
+
+            var token = GenerateJwt(user);
+            return Ok(new RegisterResponse
+            {
+                UserId = user.Id,
                 AccessToken = token.token,
                 ExpiresAtUtc = token.expiresAtUtc
             });
@@ -103,6 +170,13 @@ namespace KampusTekWebApp.Controllers
 
             var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
             return (tokenString, expires);
+        }
+
+        private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
+        {
+            using var hmac = new HMACSHA512();
+            passwordSalt = hmac.Key;
+            passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
         }
     }
 }

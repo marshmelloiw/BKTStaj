@@ -21,6 +21,92 @@ namespace KampusTekWebApp.Controllers
 
         [HttpGet]
         [AllowAnonymous]
+        public async Task<IActionResult> Register()
+        {
+            ViewBag.UserTypes = await _dbContext.UserTypes.ToListAsync();
+            return View();
+        }
+
+        public class RegisterViewModel
+        {
+            public string FirstName { get; set; } = string.Empty;
+            public string LastName { get; set; } = string.Empty;
+            public string Email { get; set; } = string.Empty;
+            public string CellNumber { get; set; } = string.Empty;
+            public int UserTypeId { get; set; }
+            public string Password { get; set; } = string.Empty;
+            public string ConfirmPassword { get; set; } = string.Empty;
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AllowAnonymous]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.UserTypes = await _dbContext.UserTypes.ToListAsync();
+                return View(model);
+            }
+
+            if (string.IsNullOrWhiteSpace(model.FirstName) ||
+                string.IsNullOrWhiteSpace(model.LastName) ||
+                string.IsNullOrWhiteSpace(model.Email) ||
+                string.IsNullOrWhiteSpace(model.CellNumber) ||
+                string.IsNullOrWhiteSpace(model.Password) ||
+                model.UserTypeId <= 0)
+            {
+                ModelState.AddModelError(string.Empty, "Tüm alanlar zorunludur.");
+                ViewBag.UserTypes = await _dbContext.UserTypes.ToListAsync();
+                return View(model);
+            }
+
+            if (model.Password != model.ConfirmPassword)
+            {
+                ModelState.AddModelError(string.Empty, "Şifreler eşleşmiyor.");
+                ViewBag.UserTypes = await _dbContext.UserTypes.ToListAsync();
+                return View(model);
+            }
+
+            var emailExists = await _dbContext.Users.AnyAsync(u => u.Email == model.Email);
+            if (emailExists)
+            {
+                ModelState.AddModelError(string.Empty, "Bu e-posta zaten kayıtlı.");
+                ViewBag.UserTypes = await _dbContext.UserTypes.ToListAsync();
+                return View(model);
+            }
+
+            var userTypeExists = await _dbContext.UserTypes.AnyAsync(ut => ut.Id == model.UserTypeId);
+            if (!userTypeExists)
+            {
+                ModelState.AddModelError(string.Empty, "Geçersiz kullanıcı tipi.");
+                ViewBag.UserTypes = await _dbContext.UserTypes.ToListAsync();
+                return View(model);
+            }
+
+            CreatePasswordHash(model.Password, out var passwordHash, out var passwordSalt);
+
+            var user = new KampusTek.Entities.User
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                CellNumber = model.CellNumber,
+                UserTypeId = model.UserTypeId,
+                PasswordHash = passwordHash,
+                PasswordSalt = passwordSalt
+            };
+
+            _dbContext.Users.Add(user);
+            await _dbContext.SaveChangesAsync();
+
+            // Don't auto-login; send user to login page after successful registration
+            TempData["RegisterSuccess"] = "Kayıt başarıyla tamamlandı. Lütfen giriş yapın.";
+            return RedirectToAction("Login", "Account");
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
         public IActionResult Login(string? returnUrl = null)
         {
             ViewBag.ReturnUrl = returnUrl;
@@ -92,6 +178,13 @@ namespace KampusTekWebApp.Controllers
             using var hmac = new HMACSHA512(storedSalt);
             var computed = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
             return computed.SequenceEqual(storedHash);
+        }
+
+        private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
+        {
+            using var hmac = new HMACSHA512();
+            passwordSalt = hmac.Key;
+            passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
         }
 
     }

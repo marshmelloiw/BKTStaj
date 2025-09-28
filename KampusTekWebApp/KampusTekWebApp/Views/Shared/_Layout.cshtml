@@ -20,6 +20,24 @@
                         <li class="nav-item"><a class="nav-link" href="/Rental">Rentals</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Maintenance">Maintenances</a></li>
                     </ul>
+                    <ul class="navbar-nav ms-auto">
+                        @if (User?.Identity?.IsAuthenticated ?? false)
+                        {
+                            <li class="nav-item">
+                                <span class="navbar-text me-2">@User.Identity.Name</span>
+                            </li>
+                            <li class="nav-item">
+                                <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-link nav-link p-0">Çıkış Yap</button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item"><a class="nav-link" href="/Account/Login">Giriş Yap</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/Account/Register">Kayıt Ol</a></li>
+                        }
+                    </ul>
                 </div>
             </div>
         </nav>
