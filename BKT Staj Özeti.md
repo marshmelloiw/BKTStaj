@@ -164,3 +164,10 @@ Northwind Database'i üzerinde SQL sorgularına çalıştım. Mentörümün verd
 AuthController üzerinden login endpointi geliştirdim ve girişte kullanıcıya JWT token üretilmesini sağladım. User tablosuna şifre güvenliği için hash ve salt alanlarını ekledim. Program.cs tarafında hem Cookie Authentication (MVC) hem de JWT Authentication (API) yapılandırmasını yaptım. Ayrıca test amaçlı kullanıcı seeding ekledim.
 
 ---
+
+## Day 17
+AuthController üzerinden register endpointini de ekledim. Role based authentication üzerine araştırma yaptım.
+
+---
+
+
