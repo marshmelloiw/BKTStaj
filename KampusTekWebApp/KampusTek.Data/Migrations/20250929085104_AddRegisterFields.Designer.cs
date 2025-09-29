@@ -4,6 +4,7 @@ using KampusTek.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KampusTek.Data.Migrations
 {
     [DbContext(typeof(KampusTekDbContext))]
-    partial class KampusTekDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250929085104_AddRegisterFields")]
+    partial class AddRegisterFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

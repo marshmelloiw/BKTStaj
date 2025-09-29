@@ -4,15 +4,16 @@
     ViewData["Title"] = "Rentals";
 }
 
-<h2>Rentals</h2>
+<div class="d-flex align-items-center justify-content-between mb-3">
+    <h2 class="mb-0">Kiralama İşlemleri</h2>
+    <a asp-action="Create" class="btn btn-primary">Yeni Kiralama</a>
+  </div>
 
 @if (TempData["SuccessMessage"] != null)
 {
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         @TempData["SuccessMessage"]
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 }
 
@@ -20,22 +21,20 @@
 {
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         @TempData["ErrorMessage"]
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 }
 
 <table class="table">
     <thead>
         <tr>
-            <th>User</th>
-            <th>Bicycle</th>
-            <th>Start Station</th>
-            <th>End Station</th>
-            <th>Start Time</th>
-            <th>Return Time</th>
-            <th></th>
+            <th>Kullanıcı</th>
+            <th>Bisiklet</th>
+            <th>Başlangıç İstasyonu</th>
+            <th>Bitiş İstasyonu</th>
+            <th>Başlangıç</th>
+            <th>Dönüş</th>
+            <th>İşlemler</th>
         </tr>
     </thead>
     <tbody>
@@ -46,16 +45,24 @@
                 <td>@rental.Bicycle?.BicycleCode</td>
                 <td>@rental.StartStation?.Name</td>
                 <td>@rental.EndStation?.Name</td>
-                <td>@rental.StartTime</td>
-                <td>@rental.ReturnTime</td>
+                <td>@rental.StartTime.ToString("g")</td>
+                <td>@(rental.ReturnTime?.ToString("g") ?? "-")</td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@rental.Id" class="btn btn-info btn-sm">Details</a>
-                    <a asp-action="Edit" asp-route-id="@rental.Id" class="btn btn-warning btn-sm">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@rental.Id" class="btn btn-danger btn-sm">Delete</a>
+                    <div class="btn-group btn-group-sm" role="group">
+                        <a asp-action="Details" asp-route-id="@rental.Id" class="btn btn-outline-secondary">Detay</a>
+                        @if (rental.ReturnTime == null)
+                        {
+                            <a asp-action="End" asp-route-id="@rental.Id" class="btn btn-success">Tamamla</a>
+                        }
+                        @if (ViewBag.IsAdmin)
+                        {
+                            <a asp-action="Edit" asp-route-id="@rental.Id" class="btn btn-outline-warning">Düzenle</a>
+                            <a asp-action="Delete" asp-route-id="@rental.Id" class="btn btn-outline-danger">Sil</a>
+                        }
+                    </div>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<a asp-action="Create" class="btn btn-primary">Create New Rental</a>

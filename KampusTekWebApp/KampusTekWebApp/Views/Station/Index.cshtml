@@ -4,15 +4,16 @@
     ViewData["Title"] = "Stations";
 }
 
-<h2>Stations</h2>
+<div class="d-flex align-items-center justify-content-between mb-3">
+    <h2 class="mb-0">İstasyonlar</h2>
+    <a asp-action="Create" class="btn btn-primary">Yeni İstasyon</a>
+  </div>
 
 @if (TempData["SuccessMessage"] != null)
 {
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         @TempData["SuccessMessage"]
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 }
 
@@ -20,19 +21,17 @@
 {
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         @TempData["ErrorMessage"]
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 }
 
 <table class="table">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Location</th>
-            <th>Capacity</th>
-            <th></th>
+            <th>Ad</th>
+            <th>Konum</th>
+            <th>Kapasite</th>
+            <th>İşlemler</th>
         </tr>
     </thead>
     <tbody>

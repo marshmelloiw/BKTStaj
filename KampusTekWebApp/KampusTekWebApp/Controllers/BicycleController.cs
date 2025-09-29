@@ -2,9 +2,11 @@ using KampusTek.Business.Abstract;
 using KampusTek.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KampusTekWebApp.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class BicycleController : Controller
     {
         private readonly IBicycleService _bicycleService;

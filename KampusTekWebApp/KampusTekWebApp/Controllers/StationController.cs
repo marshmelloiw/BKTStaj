@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using KampusTek.Business.Abstract;
 using KampusTek.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KampusTekWebApp.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class StationController : Controller
     {
         private readonly IStationService _stationService;

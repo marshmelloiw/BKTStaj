@@ -5,6 +5,13 @@
 }
 
 <h2>Oturum Aç</h2>
+@if (TempData["RegisterSuccess"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["RegisterSuccess"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
 
 <form asp-action="Login" method="post">
     <input type="hidden" asp-for="ReturnUrl" />

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\KampusTek.Data\\Migrations\\20250929085104_AddRegisterFields.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:KampusTek.Data\\Migrations\\20250929085104_AddRegisterFields.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DE6731AC-3072-4007-AA6A-8DD245AF424A}|KampusTekWebApp\\KampusTekWebApp.csproj|c:\\users\\melis\\source\\repos\\kampustekwebapp\\kampustekwebapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE6731AC-3072-4007-AA6A-8DD245AF424A}|KampusTekWebApp\\KampusTekWebApp.csproj|solutionrelative:kampustekwebapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\KampusTekWebApp\\Program.cs",
               "RelativeDocumentMoniker": "KampusTekWebApp\\Program.cs",
               "ToolTip": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\KampusTekWebApp\\Program.cs",
               "RelativeToolTip": "KampusTekWebApp\\Program.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAQwFoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAQwF8AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-15T14:52:59.479Z",
               "IsPinned": true,
@@ -40,7 +44,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "20250929085104_AddRegisterFields.cs",
+              "DocumentMoniker": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\KampusTek.Data\\Migrations\\20250929085104_AddRegisterFields.cs",
+              "RelativeDocumentMoniker": "KampusTek.Data\\Migrations\\20250929085104_AddRegisterFields.cs",
+              "ToolTip": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\KampusTek.Data\\Migrations\\20250929085104_AddRegisterFields.cs",
+              "RelativeToolTip": "KampusTek.Data\\Migrations\\20250929085104_AddRegisterFields.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T08:51:04.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\KampusTekWebApp\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "KampusTekWebApp\\Controllers\\AuthController.cs",
@@ -48,12 +65,11 @@
               "RelativeToolTip": "KampusTekWebApp\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAFUAAAAAAAAAAAAAAJAAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T20:38:50.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-25T20:38:50.535Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Models.cs",
               "DocumentMoniker": "C:\\Users\\melis\\source\\repos\\KampusTekWebApp\\KampusTek.Entities\\Models.cs",
               "RelativeDocumentMoniker": "KampusTek.Entities\\Models.cs",

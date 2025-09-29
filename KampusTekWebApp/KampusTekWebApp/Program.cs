@@ -77,7 +77,13 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Require auth for MVC site routes (will redirect to /Account/Login if not authenticated)
+// Public Account routes (login/register) must be accessible anonymously
+app.MapControllerRoute(
+    name: "account",
+    pattern: "Account/{action=Login}/{id?}",
+    defaults: new { controller = "Account" });
+
+// Require auth for other MVC site routes
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")

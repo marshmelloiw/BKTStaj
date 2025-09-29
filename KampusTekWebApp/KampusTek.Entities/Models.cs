@@ -25,7 +25,7 @@ namespace KampusTek.Entities
         public string CellNumber { get; set; } = null!;
         
         [Required]
-        [Range(1, 2)]
+        [Range(1, 3)]
         [Display(Name = "User Type")]
         public int UserTypeId { get; set; }
 

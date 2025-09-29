@@ -9,7 +9,8 @@ html {
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  box-shadow: 0 0 0 0.15rem rgba(13,110,253,.25);
+  outline: 0;
 }
 
 html {
@@ -19,4 +20,67 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #f8f9fb;
+  color: #212529;
+}
+
+/* Layout helpers */
+.navbar .nav-link {
+  color: #495057;
+}
+.navbar .nav-link:hover, .navbar .nav-link:focus {
+  color: #0d6efd;
+}
+.navbar-brand {
+  letter-spacing: .3px;
+}
+
+/* Cards and containers */
+.card {
+  border-radius: .5rem;
+  border-color: #e9ecef;
+}
+
+.badge {
+  font-weight: 500;
+  letter-spacing: .2px;
+}
+
+.nav-link.active {
+  color: #0d6efd !important;
+}
+
+.gap-2 { gap: .5rem; }
+
+/* Tables */
+table.table th {
+  font-weight: 600;
+  color: #495057;
+  background-color: #f1f3f5;
+}
+table.table td, table.table th {
+  vertical-align: middle;
+}
+
+/* Forms */
+.form-label {
+  font-weight: 500;
+}
+.form-control::placeholder {
+  color: #adb5bd;
+}
+
+/* Buttons */
+.btn-outline-secondary {
+  border-color: #ced4da;
+  color: #495057;
+}
+.btn-outline-secondary:hover {
+  background-color: #e9ecef;
+  color: #343a40;
+}
+
+/* Footer */
+footer {
+  color: #6c757d;
 }

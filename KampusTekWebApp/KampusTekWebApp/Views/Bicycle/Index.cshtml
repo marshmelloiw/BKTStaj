@@ -4,15 +4,16 @@
     ViewData["Title"] = "Bicycles";
 }
 
-<h2>Bicycles</h2>
+<div class="d-flex align-items-center justify-content-between mb-3">
+    <h2 class="mb-0">Bisikletler</h2>
+    <a asp-action="Create" class="btn btn-primary">Yeni Bisiklet</a>
+  </div>
 
 @if (TempData["SuccessMessage"] != null)
 {
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         @TempData["SuccessMessage"]
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 }
 
@@ -20,21 +21,19 @@
 {
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         @TempData["ErrorMessage"]
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 }
 
 <table class="table">
     <thead>
         <tr>
-            <th>Code</th>
+            <th>Kod</th>
             <th>Model</th>
-            <th>Color</th>
-            <th>Status</th>
-            <th>Station</th>
-            <th></th>
+            <th>Renk</th>
+            <th>Durum</th>
+            <th>İstasyon</th>
+            <th>İşlemler</th>
         </tr>
     </thead>
     <tbody>
@@ -44,16 +43,30 @@
                 <td>@bicycle.BicycleCode</td>
                 <td>@bicycle.Model</td>
                 <td>@bicycle.Color</td>
-                <td>@bicycle.Status</td>
-                <td>@bicycle.CurrentStation?.Name</td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@bicycle.Id" class="btn btn-info btn-sm">Details</a>
-                    <a asp-action="Edit" asp-route-id="@bicycle.Id" class="btn btn-warning btn-sm">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@bicycle.Id" class="btn btn-danger btn-sm">Delete</a>
+                    @if (string.Equals(bicycle.Status, "Rented", StringComparison.OrdinalIgnoreCase))
+                    {
+                        <span class="badge bg-warning text-dark">Kullanımda</span>
+                    }
+                    else if (string.Equals(bicycle.Status, "Available", StringComparison.OrdinalIgnoreCase) || string.IsNullOrWhiteSpace(bicycle.Status))
+                    {
+                        <span class="badge bg-success">Müsait</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">@bicycle.Status</span>
+                    }
+                </td>
+                <td>@(bicycle.CurrentStation?.Name ?? "-")</td>
+                <td>
+                    <div class="btn-group btn-group-sm" role="group">
+                        <a asp-action="Details" asp-route-id="@bicycle.Id" class="btn btn-outline-secondary">Detay</a>
+                        <a asp-action="Edit" asp-route-id="@bicycle.Id" class="btn btn-outline-warning">Düzenle</a>
+                        <a asp-action="Delete" asp-route-id="@bicycle.Id" class="btn btn-outline-danger">Sil</a>
+                    </div>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<a asp-action="Create" class="btn btn-primary">Create New Bicycle</a>

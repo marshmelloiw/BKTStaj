@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 using KampusTek.Business.Abstract;
 using KampusTek.Entities;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KampusTekWebApp.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class MaintenanceController : Controller
     {
         private readonly IMaintenanceService _maintenanceService;

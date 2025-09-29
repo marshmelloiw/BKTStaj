@@ -63,7 +63,8 @@ namespace KampusTek.Data
 
             modelBuilder.Entity<UserType>().HasData(
                 new UserType { Id = 1, Name = "Student" },
-                new UserType { Id = 2, Name = "Staff" }
+                new UserType { Id = 2, Name = "Staff" },
+                new UserType { Id = 3, Name = "Admin" }
             );
         }
     }

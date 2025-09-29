@@ -1,6 +1,56 @@
 ﻿@{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Ana Sayfa";
 }
 
-<h2>🚲 KampusTek Web Application</h2>
-<p>Welcome! You can manage users, bicycles, stations and rentals from the menu.</p>
+<div class="d-flex align-items-center justify-content-between mb-4">
+  <h2 class="mb-0">KampusTek</h2>
+  <div>
+    <a class="btn btn-primary" asp-controller="Rental" asp-action="Create">Hemen Kirala</a>
+  </div>
+</div>
+
+<div class="row g-3">
+  <div class="col-md-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <div class="text-muted">Toplam Kullanıcı</div>
+        <div class="h4">@ViewBag.UserCount</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <div class="text-muted">Toplam Bisiklet</div>
+        <div class="h4">@ViewBag.BicycleCount</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <div class="text-muted">Aktif Kiralama</div>
+        <div class="h4">@ViewBag.ActiveRentals</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <div class="text-muted">İstasyon</div>
+        <div class="h4">@ViewBag.StationCount</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mt-4">
+  <div class="card-body">
+    <div class="d-flex flex-wrap gap-2">
+      <a class="btn btn-outline-secondary" asp-controller="Bicycle" asp-action="Index">Bisikletleri Gör</a>
+      <a class="btn btn-outline-secondary" asp-controller="Station" asp-action="Index">İstasyonları Gör</a>
+      <a class="btn btn-outline-secondary" asp-controller="Rental" asp-action="Index">Kiralama Kayıtları</a>
+      <a class="btn btn-outline-secondary" asp-controller="User" asp-action="Index">Kullanıcılar</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+@model KampusTek.Entities.Rental
+
+@{
+    ViewData["Title"] = "Kiralamayı Tamamla";
+}
+
+<h2>Kiralamayı Tamamla</h2>
+
+<div class="card mb-3">
+    <div class="card-body">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div><strong>Kullanıcı:</strong> @Model.User?.FirstName @Model.User?.LastName</div>
+                <div><strong>Bisiklet:</strong> @Model.Bicycle?.BicycleCode</div>
+            </div>
+            <div class="col-md-6">
+                <div><strong>Başlangıç İstasyonu:</strong> @Model.StartStation?.Name</div>
+                <div><strong>Başlangıç Zamanı:</strong> @Model.StartTime.ToString("g")</div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+<form asp-action="End" method="post" class="mt-2">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <div class="mb-3">
+        <label class="form-label" for="endStationId">Bitiş İstasyonu</label>
+        <select id="endStationId" name="endStationId" class="form-select" asp-items="@(ViewBag.Stations as SelectList)">
+            <option value="">İstasyon seçin</option>
+        </select>
+    </div>
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-success">Tamamla</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">İptal</a>
+    </div>
+</form>
+
+
